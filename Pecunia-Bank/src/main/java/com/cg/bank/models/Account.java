@@ -8,10 +8,12 @@ import java.util.Date;
 @Entity
 @Table
 public class Account {
+	
     @Id
-    private int id;
+    private Long acc_num;
+    private Double amount;
     private String customerName;
-    private String City;
+    private String city;
     private String state;
     private String country;
     private String addressLine1;
@@ -21,15 +23,25 @@ public class Account {
     private String pan;
     private Date dob;
     private String gender;
+    private Date passbook_last_updated;
+    
 
-    public int getId() {
-        return id;
-    }
+	public void setAcc_num(Long acc_num) {
+		this.acc_num = acc_num;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public Long getAcc_num() {
+		return acc_num;
+	}
 
+	public Double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+	
     public String getCustomerName() {
         return customerName;
     }
@@ -39,11 +51,11 @@ public class Account {
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
     }
 
     public String getState() {
@@ -118,6 +130,13 @@ public class Account {
         this.gender = gender;
     }
 
+	public Date getPassbook_last_updated() {
+		return passbook_last_updated;
+	}
+
+	public void setPassbook_last_updated(Date passbook_last_updated) {
+		this.passbook_last_updated = passbook_last_updated;
+	}
 
 
 

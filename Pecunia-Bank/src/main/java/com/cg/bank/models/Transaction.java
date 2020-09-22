@@ -2,39 +2,42 @@ package com.cg.bank.models;
 
 import java.util.Date;
 
+import javax.persistence.GeneratedValue;
+
 public class Transaction {
 	
-	private long acc_num;
-	private long payee_acc_num;
-	private long amount;
-	private long cheque_num;
+	@GeneratedValue
+	private Long transactionId;
+	private Long acc_num;
+	private Long payee_acc_num;
+	private Double amount;
+	private Long cheque_num;
 	private String ifsc;
 	private String bank_name;
 	private Date cheque_issue_date;
 	
-	
-	public long getAcc_num() {
+	public Long getAcc_num() {
 		return acc_num;
 	}
-	public void setAcc_num(long acc_num) {
+	public void setAcc_num(Long acc_num) {
 		this.acc_num = acc_num;
 	}
-	public long getPayee_acc_num() {
+	public Long getPayee_acc_num() {
 		return payee_acc_num;
 	}
-	public void setPayee_acc_num(long payee_acc_num) {
+	public void setPayee_acc_num(Long payee_acc_num) {
 		this.payee_acc_num = payee_acc_num;
 	}
-	public long getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
-	public void setAmount(long amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
-	public long getCheque_num() {
+	public Long getCheque_num() {
 		return cheque_num;
 	}
-	public void setCheque_num(long cheque_num) {
+	public void setCheque_num(Long cheque_num) {
 		this.cheque_num = cheque_num;
 	}
 	public String getIfsc() {
@@ -42,7 +45,7 @@ public class Transaction {
 	}
 	public void setIfsc(String ifsc) {
 		this.ifsc = ifsc;
-	}	
+	}
 	public String getBank_name() {
 		return bank_name;
 	}
@@ -55,4 +58,7 @@ public class Transaction {
 	public void setCheque_issue_date(Date cheque_issue_date) {
 		this.cheque_issue_date = cheque_issue_date;
 	}
+	
+	
+	
 }
