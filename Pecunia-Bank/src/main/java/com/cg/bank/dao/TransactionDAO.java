@@ -2,7 +2,7 @@ package com.cg.bank.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.cg.bank.models.Account;
+import com.cg.bank.entities.Account;
 
 interface TransactionDAO extends JpaRepository<Account, Long>{
 

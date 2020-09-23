@@ -1,13 +1,21 @@
-package com.cg.bank.models;
+package com.cg.bank.entities;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 
 public class Transaction {
-	
+	@Id
 	@GeneratedValue
 	private Long transactionId;
+	private Date transDate;
+	
 	private Long acc_num;
 	private Long payee_acc_num;
 	private Double amount;
@@ -59,6 +67,11 @@ public class Transaction {
 		this.cheque_issue_date = cheque_issue_date;
 	}
 	
-	
+	public Date getTransDate() {
+		return transDate;
+	}
+	public void setTransDate(Date transDate) {
+		this.transDate = transDate;
+	}
 	
 }

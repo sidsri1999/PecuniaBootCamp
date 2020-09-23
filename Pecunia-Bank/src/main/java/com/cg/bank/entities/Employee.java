@@ -1,4 +1,4 @@
-package com.cg.bank.models;
+package com.cg.bank.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

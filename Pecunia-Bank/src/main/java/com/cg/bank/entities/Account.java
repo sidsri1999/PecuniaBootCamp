@@ -1,7 +1,10 @@
-package com.cg.bank.models;
+package com.cg.bank.entities;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+
 import java.util.Date;
 
 
@@ -10,6 +13,7 @@ import java.util.Date;
 public class Account {
 	
     @Id
+    @GeneratedValue
     private Long acc_num;
     private Double amount;
     private String customerName;
