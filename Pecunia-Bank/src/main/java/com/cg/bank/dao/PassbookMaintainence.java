@@ -16,6 +16,8 @@ import java.util.List;
 
 public interface PassbookMaintainence extends JpaRepository<Account, String> {
 	
+	
+	
 	@Query("select t from Transaction t where acc_num=?1 and t.transDate>=(select u.passbook_last_updated from Account u where acc_num=?1) ")
 	List<Transaction> updatePassbook(String accountId);
 	
@@ -27,6 +29,9 @@ public interface PassbookMaintainence extends JpaRepository<Account, String> {
 	
 	@Query("select t from Transaction t where acc_num=?1 and t.transDate>=?2 and t.transDate<=?3")
 	List<Transaction> accountSummary(String accountId,  Date startDate, Date endDate);
+	
+	@Query("select u from Account u where account_Id=?1")
+	Account get(String accountId);
 	
 	
 
