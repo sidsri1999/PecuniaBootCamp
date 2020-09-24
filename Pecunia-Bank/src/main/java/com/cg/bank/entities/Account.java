@@ -1,4 +1,7 @@
 package com.cg.bank.entities;
+
+
+
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -9,18 +12,17 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Account")	
 public class Account {
-	@Id  
-	@Column(length=12) 
+	@Id   //primarykey
+	@Column(length=12)  //length of column      
 	private String accountId;
 	@Column(length=15)
 	private String branch;
 	@Column(length=15)
 	private String accountType;
 	@Column(length=8)
-	private Double amount;
-	@Column(length = 20)
+	private double amount;
+	@Column(length=20)
 	private Date lastUpdated;
-	
 	
 	
 	public Date getLastUpdated() {
@@ -47,11 +49,16 @@ public class Account {
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
-	public Double getAmount() {
+	public double getAmount() {
 		return amount;
 	}
-	public void setAmount(Double amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-		
+	
+	
+	
+	
+	
+	
 }
