@@ -1,10 +1,6 @@
 Manifest-Version: 1.0
 Implementation-Title: Pecunia-Bank
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: avichal sharma
-Implementation-Vendor-Id: com.cg.bank
-Build-Jdk: 1.8.0_91
-Implementation-URL: https://spring.io/projects/spring-boot/Pecunia-Ban
- k
+Build-Jdk-Spec: 1.8
 Created-By: Maven Integration for Eclipse
 

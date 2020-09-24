@@ -8,7 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cg.bank.entities.Account;
-import com.cg.bank.entities.Transaction;
+
+import com.cg.bank.entities.Transactions;
 
 @Service
 @Transactional
@@ -19,8 +20,8 @@ public class PassbookMaintenanceServiceImpl implements PassbookMaintenanceServic
 	private PassbookMaintainence dao;
 
 	@Override
-	public List<Transaction> updatePassbook(String accountId) {
-		List<Transaction> result=dao.updatePassbook(accountId);
+	public List<Transactions> updatePassbook(String accountId) {
+		List<Transactions> result=dao.updatePassbook(accountId);
 		updatelastUpdated(accountId);
 		return result;	
 	}
@@ -34,7 +35,7 @@ public class PassbookMaintenanceServiceImpl implements PassbookMaintenanceServic
 	}
 
 	@Override
-	public List<Transaction> accountSummary(String accountId, Date startDate, Date endDate) {
+	public List<Transactions> accountSummary(String accountId, Date startDate, Date endDate) {
 		return dao.accountSummary(accountId, startDate, endDate);
 	}
 

@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cg.bank.entities.Transaction;
+
+import com.cg.bank.entities.Transactions;
 import com.cg.bank.exceptions.IdNotFound;
 import com.cg.bank.service.PassbookMaintenanceService;
 
@@ -25,11 +26,11 @@ public class PassbookController {
 	private PassbookMaintenanceService service;
 	
 	@GetMapping("/updatePassbook/{accountId}")
-	public  ResponseEntity<List<Transaction>> updatePassbook(@PathVariable("accountId") String accountId) throws  IdNotFound
+	public  ResponseEntity<List<Transactions>> updatePassbook(@PathVariable("accountId") String accountId) throws  IdNotFound
 	{
 		boolean result=service.accountValidation(accountId);
 		 if(result==true) {
-			List<Transaction> list = service.updatePassbook(accountId);
+			List<Transactions> list = service.updatePassbook(accountId);
 			return new ResponseEntity<>(list, new HttpHeaders(), HttpStatus.OK);
 	}
 		else {
@@ -39,11 +40,11 @@ public class PassbookController {
 	
 	//Fetching transactions between two dates
 	@GetMapping("/accountSummary/{accountId}/{startDate}/{endDate}")
-	public ResponseEntity<List<Transaction>> accountSummary(@PathVariable String accountId, @PathVariable Date startDate, @PathVariable Date endDate) throws  IdNotFound 
+	public ResponseEntity<List<Transactions>> accountSummary(@PathVariable String accountId, @PathVariable Date startDate, @PathVariable Date endDate) throws  IdNotFound 
 	{
 		boolean result=service.accountValidation(accountId);
 		 if (result==true) {
-			List<Transaction> list = service.accountSummary(accountId, startDate, endDate);
+			List<Transactions> list = service.accountSummary(accountId, startDate, endDate);
 			return new ResponseEntity<>(list, new HttpHeaders(), HttpStatus.OK);
 		}
 		else {
