@@ -20,7 +20,7 @@ import com.cg.bank.service.AccountManagementService;
 
 @RestController
 @RequestMapping("/AccountManagement")
-
+@CrossOrigin("http://localhost:4200")
 public class AccountController {
 
 	@Autowired

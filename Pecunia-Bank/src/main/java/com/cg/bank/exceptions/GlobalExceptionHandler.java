@@ -6,12 +6,16 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-
 public class GlobalExceptionHandler {
-	
-	@ExceptionHandler(IdNotFound.class)
-	public ResponseEntity<String> IdNotFoundExceptionHandler(IdNotFound e){
+
+	@ExceptionHandler(IdNotFoundException.class)
+	public ResponseEntity<String> IdNotFoundExceptionHandler(IdNotFoundException e){
 		return new ResponseEntity<String>(e.getMessage(),HttpStatus.OK);
 	}
-
+	
+	@ExceptionHandler(IdAlreadyExistsException.class)
+	public ResponseEntity<String> IdAlreadyExistsExceptionHandler(IdAlreadyExistsException e){
+		return new ResponseEntity<String>(e.getMessage(),HttpStatus.OK);
+	}
+	
 }
