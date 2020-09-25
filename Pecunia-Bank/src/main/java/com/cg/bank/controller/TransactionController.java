@@ -17,7 +17,7 @@ import com.cg.bank.service.TransactionService;
 
 @RestController
 @RequestMapping("/transactions")
-@CrossOrigin("http://localhost:4200")
+
 public class TransactionController {
 
 	@Autowired
