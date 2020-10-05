@@ -1,10 +1,15 @@
 package com.cg.bank.dao;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
+import com.cg.bank.entities.Account;
 import com.cg.bank.entities.Customer;
+
 
 public interface AccountManagementDao extends JpaRepository<Customer,Integer>{
 
@@ -26,5 +31,17 @@ public interface AccountManagementDao extends JpaRepository<Customer,Integer>{
 	@Modifying
 	@Query("delete from Customer e where account_Id=?1")
 	void deletecustomer(String accountId);
-    
+
+
+	@Query("select det from Account det where accountId=?1")
+	Account selectById(@Param("c") String s1);
+	
+	
+
+
+	
+	
+	
+
+
 }

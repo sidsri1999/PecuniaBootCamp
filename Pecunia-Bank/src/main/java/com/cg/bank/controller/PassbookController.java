@@ -1,7 +1,6 @@
 package com.cg.bank.controller;
 
 import java.sql.Date;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,23 +13,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.cg.bank.entities.Transactions;
 import com.cg.bank.exceptions.IdNotFound;
-
 import com.cg.bank.service.PassbookMaintenanceService;
-
-
 
 @RestController
 @RequestMapping("/passbook")
 @CrossOrigin("http://localhost:4200")
+
 public class PassbookController {
-	
+
 	@Autowired
 	private PassbookMaintenanceService service;
-
 	
-	//Fetching the transactions till last updated date
 	@GetMapping("/updatePassbook/{accountId}")
 	public  ResponseEntity<List<Transactions>> updatePassbook(@PathVariable("accountId") String accountId) throws  IdNotFound
 	{
@@ -58,6 +54,5 @@ public class PassbookController {
 		}
 
 	}
-}
-		
 
+}
